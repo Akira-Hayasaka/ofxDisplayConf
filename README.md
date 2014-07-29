@@ -2,7 +2,7 @@
 
 ![ofxDisplayConf](https://github.com/Akira-Hayasaka/ofxDisplayConf/raw/master/redmeimg/redmeimg.png)
 
-openFrameworks addon for display configuration using CoreGraphics (private) API.
+openFrameworks addon for display/projector configuration using CoreGraphics (private) API. 
 
 ### feature ###
 - get display IDs
