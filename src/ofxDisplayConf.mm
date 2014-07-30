@@ -333,7 +333,7 @@ void ofxDisplayConf::arrangeDisplaysBottomToTop()
     CGCompleteDisplayConfiguration(config, kCGConfigureForSession);
 }
 
-void arrangeDisplay(int diplayID, ofPoint pos)
+void ofxDisplayConf::arrangeDisplay(int diplayID, ofPoint pos)
 {
     CGDisplayConfigRef config;
     CGBeginDisplayConfiguration(&config);
@@ -342,3 +342,19 @@ void arrangeDisplay(int diplayID, ofPoint pos)
     
     CGCompleteDisplayConfiguration(config, kCGConfigureForSession);
 }
+
+void ofxDisplayConf::openPrefDisplayTab()
+{
+    ofSystem(displayTabScript);
+}
+
+void ofxDisplayConf::openPrefArrangeTab()
+{
+    ofSystem(arrangeTabScript);
+}
+
+void ofxDisplayConf::openPrefColorTab()
+{
+    ofSystem(colorTabScript);
+}
+

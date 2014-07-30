@@ -75,6 +75,21 @@ public:
     void arrangeDisplaysTopToBottom();
     void arrangeDisplaysBottomToTop();
     void arrangeDisplay(int diplayID, ofPoint pos); //<= advanced!
+
+    void openPrefDisplayTab();
+    void openPrefArrangeTab();
+    void openPrefColorTab();
+    
+private:
+
+    string displayTabScript =
+    "osascript -e \'tell application \"System Preferences\"' -e \'activate' -e \'set the current pane to pane id \"com.apple.preference.displays\"' -e \'reveal anchor \"displaysDisplayTab\" of pane id \"com.apple.preference.displays\"' -e \'end tell\'";
+    
+    string arrangeTabScript =
+    "osascript -e \'tell application \"System Preferences\"' -e \'activate' -e \'set the current pane to pane id \"com.apple.preference.displays\"' -e \'reveal anchor \"displaysArrangementTab\" of pane id \"com.apple.preference.displays\"' -e \'end tell\'";
+    
+    string colorTabScript =
+    "osascript -e \'tell application \"System Preferences\"' -e \'activate' -e \'set the current pane to pane id \"com.apple.preference.displays\"' -e \'reveal anchor \"displaysColorTab\" of pane id \"com.apple.preference.displays\"' -e \'end tell\'";
     
 };
 

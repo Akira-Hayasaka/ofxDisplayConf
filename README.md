@@ -10,6 +10,7 @@ openFrameworks addon for display/projector configuration using CoreGraphics (pri
 - change main/primary display
 - on/off mirroring
 - arrange displays
+- open displays system preference
 
 ### usage ###
 please check ofApp.h/.cpp in DisplayConfExample

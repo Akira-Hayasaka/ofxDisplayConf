@@ -3,10 +3,17 @@
 void ofApp::setup()
 {
     ofBackground(ofColor::white);
-    ofSetWindowShape(355, 210);
+    ofSetWindowShape(450, 280);
     
     initialDispModeOfMain = dispConf.getCurrentDsiplayMode(dispConf.getMainDisplayID());
     bMirror = false;
+    
+    ofLog() << "online displays";
+    vector<int> dispIDs = dispConf.getOnlineDisplayIDs();
+    for (auto did : dispIDs)
+    {
+        ofLog() << "id = " << did;
+    }
 }
 
 void ofApp::draw()
@@ -19,6 +26,9 @@ void ofApp::draw()
     ofDrawBitmapStringHighlight("press 'b' to arrange display bottom to top", 10, 145);
     ofDrawBitmapStringHighlight("press 's' to shuffle display mode of main", 10, 170);
     ofDrawBitmapStringHighlight("press 'q' to restore display mode of main", 10, 195);
+    ofDrawBitmapStringHighlight("press '1' to open display preference 'display' tab", 10, 220);
+    ofDrawBitmapStringHighlight("press '2' to open display preference 'arrangement' tab", 10, 245);
+    ofDrawBitmapStringHighlight("press '3' to open display preference 'color' tab", 10, 270);
 }
 
 void ofApp::keyPressed(int key)
@@ -95,7 +105,21 @@ void ofApp::keyPressed(int key)
     {
         dispConf.setDisplayMode(dispConf.getMainDisplayID(), initialDispModeOfMain);
     }
+    else if (key == '1')
+    {
+        dispConf.openPrefDisplayTab();
+    }
+    else if (key == '2')
+    {
+        dispConf.openPrefArrangeTab();
+    }
+    else if (key == '3')
+    {
+        dispConf.openPrefColorTab();
+    }
 }
+
+
 
 void ofApp::exit()
 {
